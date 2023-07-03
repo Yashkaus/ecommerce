@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+/* input[type=text], input[type=password] { */
+
+.input1{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 25%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body class="modal">
+
+<div>
+  <form class="modal-content" >
+    <div class="container">
+      <h1>Forgot-Password</h1>
+      <p>Please fill in this form to forgot your password.</p>
+      <hr>
+    <div style=" background-color: wheat;">
+      <label for="email"><b>Email</b></label>
+      <input type="text" id="email"  class="input1" placeholder="Enter Email" name="email" required>
+      <button type="submit" style=" width: 50%; margin-left: 25%; " onclick="otpblock()">Sign Up</button>
+    </div>
+
+    <div id="otp" style="display: none;">
+      <div style="margin-top: 10px;     background-color: wheat;">
+
+        <div style="margin-bottom: 10px;">
+        <label for="email"><b>Enter-OTP</b></label><br>
+        </div>
+
+      <span >
+        <input type="text" id="one" maxlength="one" name="1" style="width: 25px;
+        margin-right: 50px;
+        padding-left: 6px;
+        font-weight: 500;
+        height: 30px;
+        margin-left: 20px;" autocomplete="off"  onkeyup="clickevent('one','two')">
+        </span>
+
+        <span>
+            <input type="text" id="two" name="two" maxlength="1" style="width: 25px;
+            margin-right: 50px;
+            padding-left: 6px;
+            font-weight: 500;
+            height: 30px;
+            margin-left: 20px;" autocomplete="off" onkeyup="clickevent('two','three')">
+            </span>
+
+            <span>
+                <input type="text" id="three" name="three" maxlength="1" style="width: 25px;
+                margin-right: 50px;
+                padding-left: 6px;
+                font-weight: 500;
+                height: 30px;
+                margin-left: 20px;" autocomplete="off"  onkeyup="clickevent('three','four')">
+                </span>
+
+            <span>
+                 <input type="text" id="four" name="four" maxlength="1" style="width: 25px;
+                 margin-right: 20px;
+                 padding-left: 6px;
+                 font-weight: 500;
+                 height: 30px;
+                 margin-left: 20px;" autocomplete="off"  >
+            </span>
+
+            <button type="submit" style=" width: 50%; margin-left: 25%; margin-top: 20px;" onclick="new_password()">Sign Up</button>
+        </div>
+    </div>
+
+    <div id="new_password" style="display: none;">
+        <div style="margin-top: 10px;     background-color: wheat;">
+            <label for="email"><b>New Password</b></label>
+            <input type="password"  class="input1" placeholder="Enter Email" name="email" required minlength="4" maxlength="8" autocomplete="off">
+            <button type="submit" style=" width: 50%; margin-left: 25%; ">Sign Up</button>
+          </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+<script src="forgeting.js"></script>
+
+</body>
+</html>

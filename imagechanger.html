@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="photo-1542291026-7eec264c27ff.jpg" alt="not showing" style="height: 250px; width: 200px;     margin: 20px;
+        padding: 15px;">
+        <img src="download.jpg" alt="not showing" style="height: 250px; width: 200px;     margin: 20px;
+        padding: 15px;">
+        <img src="red.jpg" alt="not showing" style="height: 250px; width: 200px;     margin: 20px;
+        padding: 15px;">
+        <img src="blue.jpg" alt="not showing" style="height: 250px; width: 200px;     margin: 20px;
+        padding: 15px;">
+        <div id="show">
+        </div>
+        
+        <div>
+            <img src="new.jpg" alt="" style="    display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 440px;
+            height: 300px;     border: 5px solid blue" id="myimage">
+            <span>
+            <img src="download.jpg" style="    height: 100px;
+            width: auto;
+            margin-left: 31%;
+            border: 5px solid green;" onmousedown="changeimage('download.jpg')">
+            </span>
+            <span>
+                <img src="new.jpg" style="    height: 100px;
+                width: auto;
+                border: 5px solid green;" onmousedown="changeimage('new.jpg')">
+                </span>
+                <span>
+                    <img src="blue.jpg" style="    height: 100px;
+                    width: auto;
+                    border: 5px solid green;" onmousedown="changeimage('blue.jpg')">
+                    </span>
+                    <span>
+                        <img src="red.jpg" style="    height: 100px;
+                        width: auto;
+                        border: 5px solid green;" onmousedown="changeimage('red.jpg')">
+                        </span>
+        </div>
+
+        <div id="student">
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+           
+    let shop=[
+        {name:"abhay",
+         age:20,
+        img:["new.jpg","red.jpg","blue.jpg","download.jpg"]},
+
+        {name:"sahil",
+         age:18,
+        img:["new.jpg","red.jpg","blue.jpg","download.jpg"]},
+        
+        {name:"chhaya",
+         age:22,
+        img:["new.jpg","red.jpg","blue.jpg","download.jpg"]},
+        
+        {name:"ram",
+         age:25,
+        img:["new.jpg","red.jpg","blue.jpg","download.jpg"]
+        }
+    ];
+
+    console.log(shop)
+    console.log(shop[0].img[0])
+
+
+
+    const repersentstudent=()=>{
+        let student="";
+        shop.map((values)=>{
+            student+=`
+            <div style="margin: auto; width: 60%; border: 3px solid green; padding: 10px;">
+            <h1 style="text-align: center;">Student Card</h1>
+            <div>
+            <img src="${values.img[0]}" alt="" style="    display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 440px;
+            height: 300px;     border: 5px solid blue" id="myimages">
+            <span>
+            <img src="${values.img[0]}" style="    height: 100px;
+            width: auto;
+            margin-left: 19%;
+            border: 5px solid green;" onmousedown="changeimage('${values.img[0]}')">
+            </span>
+            <span>
+                <img src="${values.img[1]}" style="    height: 100px;
+                width: auto;
+                border: 5px solid green;" onmousedown="changeimage('${values.img[1]}')">
+                </span>
+                <span>
+                    <img src="${values.img[2]}" style="    height: 100px;
+                    width: auto;
+                    border: 5px solid green;" onmousedown="changeimage('${values.img[2]}')">
+                    </span>
+                    <span>
+                        <img src="${values.img[3]}" style="    height: 100px;
+                        width: auto;
+                        border: 5px solid green;" onmousedown="changeimage('${values.img[3]}')">
+                        </span>
+        </div>
+            <h3 style="text-align: center;">Name : ${values.name}</h3>
+            <h4 style="text-align: center;">AGE: ${values.age}</h4>
+            </div>
+            `
+        });
+        document.getElementById("student").innerHTML=student;
+    }
+    repersentstudent()
+
+    const changeimage=(data)=>{
+    console.log(data)
+    document.getElementById("myimages").src=data;
+  }
+
+
+     
+
+    </script>
+</body>
+</html>
+
